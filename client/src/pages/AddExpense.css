@@ -1,0 +1,291 @@
+.add-expense-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.add-expense-card {
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+.add-expense-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.add-expense-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+}
+
+.form-main {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-right {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.amount-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 1rem;
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+input[type="number"] {
+    padding-left: 2rem;
+}
+
+input[type="date"] {
+    cursor: pointer;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px var(--color-accent-primary-transparent);
+}
+
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.selection-box {
+    padding: 0.75rem 1rem;
+    background-color: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.selection-box:hover {
+    background-color: var(--color-bg-accent);
+    transform: translateY(-1px);
+}
+
+.selection-box.selected {
+    background-color: var(--color-accent-primary);
+    color: white;
+    border-color: var(--color-accent-primary);
+    font-weight: 500;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.cancel-button,
+.submit-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancel-button {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+.cancel-button:hover {
+    background-color: var(--color-bg-accent);
+    color: var(--color-text-primary);
+}
+
+.submit-button {
+    background-color: var(--color-accent-primary);
+    border: none;
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: var(--color-accent-primary-dark);
+    transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.error-message,
+.success-message {
+    padding: 1rem;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: slideIn 0.3s ease-out;
+}
+
+.error-message {
+    background-color: var(--color-accent-danger-transparent);
+    color: var(--color-accent-danger);
+    border: 1px solid var(--color-accent-danger);
+}
+
+.success-message {
+    background-color: var(--color-accent-success-transparent);
+    color: var(--color-accent-success);
+    border: 1px solid var(--color-accent-success);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .form-main {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-left,
+    .form-right {
+        flex: 1;
+    }
+
+    .selection-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .add-expense-container {
+        margin: 1rem;
+    }
+
+    .add-expense-card {
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .cancel-button,
+    .submit-button {
+        width: 100%;
+    }
+}
+
+/* Amount input specific styles */
+.form-group input[type="number"] {
+    font-family: 'SF Mono', 'Roboto Mono', monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Date input specific styles */
+.form-group input[type="date"] {
+    font-family: inherit;
+}
+
+/* Category and Account select specific styles */
+.form-group select option {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+}
+
+/* Animation for form elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
+.form-group:nth-child(6) { animation-delay: 0.6s; } 
+.form-group:nth-child(6) { animation-delay: 0.6s; } 

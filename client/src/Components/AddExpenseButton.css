@@ -1,0 +1,70 @@
+.add-expense-button {
+    position: fixed;
+    top: 5rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.add-expense-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.3);
+    background: linear-gradient(135deg, #45a049, #3d8b40);
+}
+
+.add-expense-button:active {
+    transform: translateY(0);
+}
+
+.plus-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.button-text {
+    letter-spacing: 0.5px;
+}
+
+/* Animation for the button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+    }
+    100% {
+        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+    }
+}
+
+.add-expense-button {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .add-expense-button {
+        top: 4.5rem;
+        right: 1.5rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .plus-icon {
+        font-size: 1.3rem;
+    }
+} 

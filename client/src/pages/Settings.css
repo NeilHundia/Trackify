@@ -1,0 +1,155 @@
+.settings-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.settings-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 2rem;
+}
+
+.settings-container {
+    display: flex;
+    gap: 2rem;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.settings-sidebar {
+    width: 250px;
+    background-color: var(--color-bg-tertiary);
+    padding: 1.5rem 0;
+}
+
+.settings-tab {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.settings-tab:hover {
+    background-color: var(--color-bg-accent);
+    color: var(--color-text-primary);
+}
+
+.settings-tab.active {
+    background-color: var(--color-bg-accent);
+    color: var(--color-text-primary);
+    font-weight: 500;
+    border-left: 3px solid var(--color-accent-primary);
+}
+
+.settings-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.settings-section {
+    max-width: 600px;
+}
+
+.settings-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.settings-group {
+    margin-bottom: 1.5rem;
+}
+
+.settings-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.settings-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.settings-input:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px rgba(var(--color-accent-primary-rgb), 0.1);
+}
+
+.settings-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.settings-radio-group,
+.settings-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.settings-radio-group label,
+.settings-checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.settings-radio-group input[type="radio"],
+.settings-checkbox-group input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .settings-page {
+        padding: 1rem;
+    }
+
+    .settings-container {
+        flex-direction: column;
+    }
+
+    .settings-sidebar {
+        width: 100%;
+        padding: 0;
+    }
+
+    .settings-tab {
+        padding: 0.75rem 1rem;
+    }
+
+    .settings-content {
+        padding: 1.5rem;
+    }
+} 
